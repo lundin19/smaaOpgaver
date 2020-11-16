@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+<body>
+    <input type="number" id="addtoten" value="1">
+    <button type="button" id="add">Plus 10</button>
+    <hr>
+
+    <button type="button" id="question">Besvar spørgsmål</button>
+    <script>
+        // Omskriv følgende fire funktioner til arrow functions
+
+        // 1. Tilføj 10 til et tal
+        // function addToTen(num) {
+        //     return 10 + num;
+        // }
+
+      let addToTen = num => 10 + num;
+
+        document.getElementById('add').addEventListener("click", () => {
+            let value = parseInt(document.getElementById('addtoten').value);
+            console.log(addToTen(value));
+        });
+
+
+        // 2. Divider tal 1 med tal 2
+        // function divideUs(num1, num2) {
+        //     return num1/num2;
+        // }
+
+        let divideUs = (num1, num2) => num1 / num2;
+
+        // 3. Beregn summen af to værdier
+        // function sum(a, b) {
+        //     return a + b;
+        // }
+
+        let sum = (a, b) => a + b;
+
+        // 4. Besvar spørgsmålet
+        // function ask(question, yes, no) {
+        //     if (confirm(question)) yes() 
+        //     else no();
+        // }
+
+        const ask = (question, yes, no) => {
+            if (confirm(question)) yes() 
+            else no();
+        }
+
+        document.getElementById('question').addEventListener("click", () => {
+            ask(
+                "Er denne opgave let?",
+                () => { alert("Ja - opgaven er let."); },
+                () => { alert("Nej - opgaven er ikke let."); }
+            )  
+        });
+
+    </script>
+</body>
+</html>
